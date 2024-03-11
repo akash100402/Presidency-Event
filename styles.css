@@ -1,0 +1,240 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* common header section for all pages   */
+
+.header_pres {
+  width: 100%;
+  background-color: white;
+  height: 140px;
+
+  display: flex;
+  align-items: center;
+  border-bottom: 4px solid black;
+  justify-content: space-around;
+}
+img {
+  height: 120px;
+  width: auto;
+}
+.header-text {
+  text-align: center;
+}
+.header-text h2 {
+  color: rgb(0, 43, 66);
+  margin-bottom: 10px;
+}
+.header-text h3 {
+  color: rgb(0, 43, 66);
+  margin-bottom: 10px;
+}
+.header-text h4 {
+  color: rgb(230, 0, 0);
+}
+
+/* index.php styles   */
+
+.body-content {
+  width: 100%;
+  height: auto;
+}
+
+.event-container {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.event {
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.event img {
+  max-width: 100%;
+  height: auto;
+}
+
+.event:hover {
+box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.heading button {
+  padding: 10px 25px;
+  border-radius: 30px;
+  transition: 0.3s ease-in-out;
+  background-color: rgb(0, 94, 156);
+  color: white;
+}
+.heading button:hover {
+  border-radius: 30px;
+  background-color: rgb(154, 199, 255);
+  border: none;
+  color: black;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.heading {
+  text-align: center;
+}
+.heading h1 {
+  text-transform: uppercase;
+
+  font-weight: bolder;
+  border-bottom: 2px solid gray;
+  color: rgb(40, 38, 38);
+  padding-bottom: 18px;
+}
+.event h2 {
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: rgb(0, 48, 91);
+}
+.event p {
+  font-weight: bold;
+}
+#date-text {
+  color: rgb(173, 11, 11);
+  font-weight: bold;
+}
+#org-text {
+  font-weight: bold;
+  color: rgb(88, 0, 170);
+}
+
+/* Add events page  styles */
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: calc(100vh - var(--header-height)); */
+}
+.form {
+  background-color: rgba(110, 199, 255, 0.451);
+  padding: 0px 40px 20px;
+  margin-top: 20px;
+   border-radius: 20px;
+}
+.form h1,
+button {
+  text-align: center;
+}
+.form input, textarea {
+  border-radius: 20px;
+  padding: 10px;
+}
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.submit-btn {
+  width: 100%;
+  text-align: center;
+}
+
+#submit-btn {
+  padding: 10px 25px;
+  border-radius: 30px;
+  transition: 0.3s ease-in-out;
+  background-color: rgb(0, 94, 156);
+  color: white;
+}
+#submit-btn:hover {
+  border-radius: 30px;
+  background-color: rgb(255, 255, 255);
+
+  color: black;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+/*Single Event Page styles*/
+.single-event {
+  width: 100%;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.single-event h1 {
+  text-transform: uppercase;
+  border-bottom: 2px solid rgb(0, 109, 109);
+  font-size: 50px;
+  font-weight: bolder;
+  color: rgb(121, 4, 132);
+}
+.single-event img {
+  width: 40%;
+  height: auto;
+}
+.date-org {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 60px;
+  border-bottom: 1px solid gray;
+  font-size: 30px;
+  font-weight: bolder;
+}
+#discription-para {
+  padding: 20px 200px;
+  font-size: 25px;
+}
+
+#dis-date {
+  color: rgb(179, 36, 36);
+}
+#dis-org {
+  color: rgb(14, 151, 21);
+}
+#img-event {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+@media (max-width: 768px) {
+  /* Styles specific to smaller screens */
+  body {
+    /* Example: Decrease font size */
+  }
+  .header_pres {
+    height: 100px;
+    border-bottom: 2px solid gray;
+    padding-bottom: 0;
+  }
+  .header_pres h2,
+  h3,
+  h4 {
+    font-size: 0.6em;
+  }
+  .header_pres img {
+    height: 70px;
+    width: auto;
+  }
+/* single event detail page styles   */
+.single-event img{
+  width: 60%;
+  height: auto;
+}
+.single-event h1{
+  font-size: 25px;
+}
+
+#discription-para {
+  padding: 20px 20px;
+  font-size: 15px;
+}
+.date-org{
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+}
