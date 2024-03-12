@@ -4,7 +4,7 @@ body {
 
 /* common header section for all pages   */
 
-.header_pres {
+/* .header_pres {
   width: 100%;
   background-color: white;
   height: 140px;
@@ -13,7 +13,7 @@ body {
   align-items: center;
   border-bottom: 4px solid black;
   justify-content: space-around;
-}
+} */
 img {
   height: 120px;
   width: auto;
@@ -33,7 +33,37 @@ img {
   color: rgb(230, 0, 0);
 }
 
-/* index.php styles   */
+/* index.php styles  */
+main {
+  display: grid;
+  grid-template-areas: "head head head" "side content content" "foot foot foot";
+  grid-template-rows: 140px auto 80px;
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  grid-area: head;
+
+  display: flex;
+  align-items: center;
+  border-bottom: 4px solid black;
+  justify-content: space-around;
+}
+article {
+  grid-area: content;
+  background-color: bisque;
+}
+aside {
+  grid-area: side;
+  background-color: lightcoral;
+}
+footer {
+  background-color: yellow;
+  grid-area: foot;
+}
+
+/* respective event pages */
 
 .body-content {
   width: 100%;
@@ -61,7 +91,7 @@ img {
 }
 
 .event:hover {
-box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .heading button {
@@ -119,13 +149,15 @@ box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   background-color: rgba(110, 199, 255, 0.451);
   padding: 0px 40px 20px;
   margin-top: 20px;
-   border-radius: 20px;
+  border-radius: 20px;
 }
 .form h1,
 button {
   text-align: center;
 }
-.form input, textarea {
+.form input,
+textarea,
+select {
   border-radius: 20px;
   padding: 10px;
 }
@@ -219,22 +251,21 @@ button {
     height: 70px;
     width: auto;
   }
-/* single event detail page styles   */
-.single-event img{
-  width: 60%;
-  height: auto;
-}
-.single-event h1{
-  font-size: 25px;
-}
+  /* single event detail page styles   */
+  .single-event img {
+    width: 60%;
+    height: auto;
+  }
+  .single-event h1 {
+    font-size: 25px;
+  }
 
-#discription-para {
-  padding: 20px 20px;
-  font-size: 15px;
-}
-.date-org{
-  font-size: 18px;
-  font-weight: bolder;
-}
-
+  #discription-para {
+    padding: 20px 20px;
+    font-size: 15px;
+  }
+  .date-org {
+    font-size: 18px;
+    font-weight: bolder;
+  }
 }

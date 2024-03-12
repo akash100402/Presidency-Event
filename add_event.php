@@ -1,3 +1,5 @@
+<!-- add_event.php -->
+
 <?php
 // Database connection
 $servername = "localhost";
@@ -16,7 +18,7 @@ if ($conn->connect_error) {
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if all form fields are set
-    if (isset($_POST['name']) && isset($_POST['date']) && isset($_POST['description']) && isset($_POST['organizer']) && isset($_FILES['image'])) {
+    if (isset($_POST['name']) && isset($_POST['event_type']) && isset($_POST['date']) && isset($_POST['description']) && isset($_POST['organizer']) && isset($_FILES['image'])) {
         // Check if the file upload was successful
         if ($_FILES['image']['error'] === UPLOAD_ERR_OK) {
             // Move the uploaded file to the destination directory
@@ -24,17 +26,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $image_path)) {
                 // Sanitize user inputs to prevent SQL injection
                 $name = mysqli_real_escape_string($conn, $_POST['name']);
+                $event_type = mysqli_real_escape_string($conn, $_POST['event_type']);
                 $date = mysqli_real_escape_string($conn, $_POST['date']);
                 $description = mysqli_real_escape_string($conn, $_POST['description']);
                 $organizer = mysqli_real_escape_string($conn, $_POST['organizer']);
 
                 // Insert into database
-                $sql = "INSERT INTO events (name, date, description, organizer, image_url)
+                $sql = "INSERT INTO " . $event_type . "_events (name, date, description, organizer, image_url)
                         VALUES ('$name', '$date', '$description', '$organizer', '$image_path')";
 
                 if ($conn->query($sql) === TRUE) {
-                    // Redirect to index.php after adding event
-                    header("Location: index.php");
+                    // Redirect to respective event page after adding event
+                    if ($event_type === "mca") {
+                        header("Location: MCA_events.php");
+                    } else if ($event_type === "bca") {
+                        header("Location: BCA_events.php");
+                    }
                     exit(); // Ensure script execution stops after redirection
                 } else {
                     echo "Error: " . $sql . "<br>" . $conn->error;
@@ -55,6 +62,7 @@ $conn->close();
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +71,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Event</title>
     <link rel="stylesheet" href="styles.css">
-    
+
 </head>
 
 <body>
@@ -86,6 +94,15 @@ $conn->close();
                     <input type="text" placeholder="Enter event name" name="name" id="name" required><br>
                 </div>
                 <div class="fields">
+                    <label for="event_type">Event Type:</label>
+                    <select name="event_type" id="event_type" required>
+                        <option value="select-non">---Select Department---</option>
+                        <option value="mca">MCA Event</option>
+                        <option value="bca">BCA Event</option>
+                    </select><br>
+                </div>
+
+                <div class="fields">
                     <label for="date">Event Date:</label>
                     <input type="date" name="date" id="date" required><br>
                 </div>
@@ -106,7 +123,7 @@ $conn->close();
         </div>
     </div>
 
-   
+
 </body>
 
 </html>
