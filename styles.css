@@ -4,17 +4,7 @@ body {
 
 /* common header section for all pages   */
 
-/* .header_pres {
-  width: 100%;
-  background-color: white;
-  height: 140px;
-
-  display: flex;
-  align-items: center;
-  border-bottom: 4px solid black;
-  justify-content: space-around;
-} */
-img {
+.header_pres img {
   height: 120px;
   width: auto;
 }
@@ -44,7 +34,6 @@ main {
 
 header {
   grid-area: head;
-
   display: flex;
   align-items: center;
   border-bottom: 4px solid black;
@@ -52,12 +41,78 @@ header {
 }
 article {
   grid-area: content;
-  background-color: bisque;
+  background-color: rgb(255, 255, 255);
+  padding: 0px 30px;
 }
 aside {
+ margin-top: 30px;
+  padding: 10px 60px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
   grid-area: side;
-  background-color: lightcoral;
+  background-color: snow;
 }
+aside button {
+  padding: 10px 30px;
+  border: transparent;
+  border-radius: 20px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+aside button:hover {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+#eve-btn {
+  background-color: rgb(255, 254, 194);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+#eve-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.ca-title {
+  text-decoration: underline;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(48, 0, 144);
+}
+.ca-description {
+  font-size: 20px;
+  /* font-weight: bold; */
+  color: rgb(0, 0, 0);
+}
+
+/* CSS for slideshow */
+.slideshow-container {
+  margin-left: 10%;
+    max-width: 80%;
+    position: relative;
+    margin-top: 20px;
+}
+
+.mySlides {
+    display: none;
+}
+
+/* CSS for slideshow images */
+.mySlides img {
+    width: 100%;
+    height: auto;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+/* CSS for slideshow transitions */
+.fade {
+    animation: fadeEffect 1.5s ease-in-out infinite;
+}
+
+
+
 footer {
   background-color: yellow;
   grid-area: foot;
@@ -238,7 +293,7 @@ select {
     /* Example: Decrease font size */
   }
   .header_pres {
-    height: 100px;
+    height: 120px;
     border-bottom: 2px solid gray;
     padding-bottom: 0;
   }
@@ -267,5 +322,27 @@ select {
   .date-org {
     font-size: 18px;
     font-weight: bolder;
+  }
+
+  article {
+    padding: 0px 10px;
+  }
+  aside {
+    padding: 5px;
+  }
+  aside button {
+    padding: 5px 10px;
+  }
+
+  .ca-title {
+    font-size: 20px;
+  }
+  .ca-description {
+    font-size: 12px;
+  }
+
+  footer {
+    background-color: yellow;
+    grid-area: foot;
   }
 }
