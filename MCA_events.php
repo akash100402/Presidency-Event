@@ -22,7 +22,11 @@
 
     <div class="heading">
         <h1>MCA Events</h1>
-        <a href="add_event.php"><button>Add Event</button></a>
+        <div class="home-btns">
+            <a href="index.php"><button> ⇐ Go to Home</button></a>
+            <a href="add_event.php"><button id="add-btn" >Add Event ➕</button></a>
+
+        </div>
     </div>
     <div class="event-container">
         <?php
