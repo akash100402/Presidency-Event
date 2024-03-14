@@ -28,13 +28,13 @@
             </p>
             <div class="slideshow-container">
                 <div class="mySlides fade">
-                    <img src="./assets/24039.jpg" style="width:100%">
+                    <img src="./assets/1552385971phpCZI0o7.jpeg" style="width:100%">
                 </div>
                 <div class="mySlides fade">
-                    <img src="./assets/613995.jpg" style="width:100%">
+                    <img src="./assets/4640103689_76f23efe7c_b.jpg" style="width:100%">
                 </div>
                 <div class="mySlides fade">
-                    <img src="./assets/85320.jpg" style="width:100%">
+                    <img src="./assets/Presidency-College.png" style="width:100%">
                 </div>
             </div>
         </article>

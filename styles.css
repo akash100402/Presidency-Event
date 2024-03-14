@@ -113,13 +113,27 @@ aside button:hover {
 }
 
 footer {
-  background-color: rgb(178, 178, 178);
+  background-color: rgb(89, 89, 89);
   display: flex;
   justify-content: space-around;
+  color: white;
   align-items: center;
   grid-area: foot;
 }
+.footer-social ul{
+  list-style: none;
 
+}
+.footer-social ul li{
+  color: white;
+}
+.footer-social a{
+  text-decoration: none;
+  color: white;
+}
+.footer-social a:hover{
+  text-decoration: underline;
+}
 /* respective event pages */
 
 .body-content {
@@ -364,10 +378,7 @@ select {
     font-size: 12px;
   }
 
-  footer {
-    background-color: yellow;
-    grid-area: foot;
-  }
+
 
   .mySlides img {
     height: auto;
