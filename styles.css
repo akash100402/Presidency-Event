@@ -120,18 +120,17 @@ footer {
   align-items: center;
   grid-area: foot;
 }
-.footer-social ul{
+.footer-social ul {
   list-style: none;
-
 }
-.footer-social ul li{
+.footer-social ul li {
   color: white;
 }
-.footer-social a{
+.footer-social a {
   text-decoration: none;
   color: white;
 }
-.footer-social a:hover{
+.footer-social a:hover {
   text-decoration: underline;
 }
 /* respective event pages */
@@ -160,20 +159,20 @@ footer {
   max-width: 100%;
   height: auto;
 }
-.home-btns{
+.home-btns {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 20px;
-
 }
-#add-btn{
-  color: black;
-  background-color: rgb(208, 255, 137);
+#add-btn {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 146, 200);
 }
-#add-btn:hover{
+#add-btn:hover {
   color: black;
-  background-color: rgb(187, 251, 91);
+  background-color: white;
+  border: 2px solid black;
 }
 .event:hover {
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -183,15 +182,15 @@ footer {
   padding: 18px 35px;
   border: transparent;
   border-radius: 30px;
-  transition: 0.1s ease-in-out;
-  background-color: rgb(143, 249, 246);
-  color: rgb(0, 0, 0);
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  transition: 0.2s ease-in;
+  background-color: rgb(169, 40, 255);
+  color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .heading button:hover {
   border-radius: 30px;
-  background-color: rgb(67, 248, 251);
-  border: none;
+  background-color: white;
+  border: 2px solid black;
   color: black;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -339,7 +338,7 @@ select {
     width: auto;
   }
 
-  .heading button{
+  .heading button {
     padding: 12px 25px;
   }
   /* single event detail page styles   */
@@ -377,8 +376,6 @@ select {
   .ca-description {
     font-size: 12px;
   }
-
-
 
   .mySlides img {
     height: auto;

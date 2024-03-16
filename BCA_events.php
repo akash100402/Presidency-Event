@@ -6,7 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BCA Events</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
+        /* Modal content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+            border-radius: 5px;
+        }
+
+        /* Close button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Input fields and labels */
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        /* Submit button */
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 
 <body>
@@ -22,9 +92,34 @@
 
     <div class="heading">
         <h1>BCA Events</h1>
-        <a href="add_event.php"><button>Add Event</button></a>
+        <!-- Button to open the modal -->
+        <div class="home-btns">
+            <a href="index.php"><button> Go to Home</button></a>
+            <button id="add-btn" onclick="openModal()">Add Event</button>
+        </div>
+
     </div>
+
+    <!-- The Modal -->
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Enter Credentials</h2>
+            <form action="authenticate.php" method="post">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+
     <div class="event-container">
+        <!-- Your PHP code to display events goes here -->
         <?php
         // Database connection
         $servername = "localhost";
@@ -48,6 +143,7 @@
             // Output data of each row
             while ($row = $result->fetch_assoc()) {
         ?>
+
                 <div class="event" onclick="location.href='event_detail.php?id=<?php echo $row["id"]; ?>'">
                     <img src="<?php echo $row["image_url"]; ?>" alt="<?php echo $row["name"]; ?>">
                     <h2><?php echo $row["name"]; ?></h2>
@@ -65,6 +161,33 @@
         // Close database connection
         $conn->close();
         ?>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Function to open the modal
+        function openModal() {
+            modal.style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
+
+
     </div>
 </body>
 
